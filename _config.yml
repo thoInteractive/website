@@ -1,37 +1,33 @@
----
-title: Igor Luíz
-timezone: UTC
-collections:
-  posts:
-    title: Posts
-    output: true
-  uploads:
-    title: Uploads
-    output: true
-email: igor@devstacks.com.br
-description: 'Full Stack Developer
 
-'
+# General configs
 baseurl: ''
-url: http://halfeld.github.io
-github_username: halfeld
+url: ''
+lang: pt_BR
+
+# SEO cofigs
+head:
+  title: Your awesome title
+  description: The description
+  author: You
+  github: username
+  codepen: username
+  linkedin: username
+  themeColor: purple
+  imagePathMain: /path/to/img
+
+  jsonld:
+    type: person
+    name: You name
+    url: example@example.com.br
+    email: your-email@domain.com
+
+  twitter:
+    author: Your username
+
+# Build settings
 markdown: kramdown
-links:
-- title: About
-  url: "/"
-- title: Articles
-  url: "/articles/"
-- title: Projects
-  url: "/projects/"
-- title: Videos
-  url: "/videos/"
-- title: Talks
-  url: "/talks/"
-- title: Resume
-  url: https://github.com/Halfeld/halfeld.github.io/blob/master/resume.md
-sass:
-  style: compressed
 exclude:
-- package.json
-- src
-- node_modules
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - src

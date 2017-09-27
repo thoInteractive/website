@@ -1,40 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang }}">
+<head>
+  {% include head/head.html %}
+</head>
+<body>
 
-  {% include head.html %}
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
 
-  <body>
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+  {{ content }}
 
-    <script type="application/ld+json">
-      {
-        "@context": "http://www.schema.org",
-        "@type": "person",
-        "@id": "http://www.igorluiz.me",
-        "name": "Igor Luíz",
-        "spouse": {
-          "@id": "https://github.com/halfeld",
-          "name": "halfeld"
-        }
-      }
-    </script>
-
-    {% include sprite.html %}
-    {% include header.html %}
-
-    <!-- Particles -->
-    <div class="stars" id="stars"></div>
-    {% if page.index %}
-      <article class="content">
-        {{ content }}
-      </article>
-    {% else %}
-      {{ content }}
-    {% endif %}
-
-    {% include footer.html %}
-    {% include analytics.html %}
-    <script src="{{ "/assets/js/main.min.js" | prepend: site.baseurl }}"></script>
-  </body>
+  <script src="{{ "/assets/js/main.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+</body>
 </html>

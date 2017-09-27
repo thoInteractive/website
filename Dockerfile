@@ -1,10 +1,12 @@
-FROM jekyll/jekyll
 
-RUN npm install -g grunt
+FROM olalond3/node6-jekyll-docker
 
-USER jekyll
+ADD . /src
 
-ADD . /srv/jekyll
-WORKDIR /srv/jekyll
+WORKDIR /src
 
-CMD npm install && grunt
+RUN bundle config --global silence_root_warning 1
+RUN npm install -g gulp bower --silent
+RUN npm install --silent
+RUN bower install --allow-root
+RUN bundle install
